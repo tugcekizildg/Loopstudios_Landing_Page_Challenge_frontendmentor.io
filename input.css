@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero{
+background: url('../images/desktop/image-hero.jpg') center/cover no-repeat;
+}
+.hamburger{
+    cursor:pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+}
+.hamburger-top,.hamburger-middle,.hamburger-bottom{
+    position: absolute;
+    width: 1.5rem;
+    height: 0.15rem;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+.hamburger-middle{
+    transform: translateY(0.4375rem);
+}
+.hamburger-bottom{
+    transform: translateY(0.875rem);
+}
+.open{
+    transform: rotate(90deg);
+}
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(0.375rem) translateX(0.375rem);
+}
+.open .hamburger-middle{
+    display: none;
+}
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(0.375rem) translateX(-0.375rem);
+}
+
+@media(max-width: 576px){
+.hero{
+    background: url('../images/mobile/image-hero.jpg') cover no-repeat;
+    }
+}
